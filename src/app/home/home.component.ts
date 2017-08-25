@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +18,13 @@ export class HomeComponent implements OnInit {
   ];
   myHero = this.heroes[0];
 
-  constructor() { }
+  constructor( private router: Router, ) { }
 
   ngOnInit() {
+  }
+
+  goToInput() {
+    this.router.navigateByUrl('input-model');
   }
 
 }
